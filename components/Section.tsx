@@ -12,7 +12,7 @@ export const Section: React.FC<SectionProps> = ({ id, title, children, className
     <section id={id} className={`py-24 px-6 md:px-12 max-w-6xl mx-auto ${className}`}>
       {title && (
         <h2 className="text-sm font-mono uppercase tracking-[0.2em] mb-16 text-center text-gray-600">
-          // {title}
+          {title}
         </h2>
       )}
       {children}

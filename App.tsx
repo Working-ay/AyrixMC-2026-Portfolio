@@ -45,7 +45,7 @@ const App: React.FC = () => {
       </section>
 
       {/* Projects Section - Text Masonry */}
-      <Section id="projects" title="Index of Works">
+      <Section id="projects" title="PROJECTS">
         <div className="columns-1 md:columns-2 lg:columns-3 gap-16 space-y-16">
           {allProjects.map((project, index) => (
             <ProjectCard key={`${project.name}-${index}`} project={project} />
@@ -54,7 +54,7 @@ const App: React.FC = () => {
       </Section>
 
       {/* Skills Section - Text Clouds */}
-      <Section id="skills" title="System Capabilities">
+      <Section id="skills" title="SKILLS">
         <div className="flex flex-wrap justify-center gap-x-10 gap-y-6 max-w-3xl mx-auto">
           {SKILLS.map((skill) => (
             <div key={skill.name} className="group flex items-center gap-3">
@@ -68,7 +68,7 @@ const App: React.FC = () => {
       </Section>
 
       {/* Experience Section - Minimal Text */}
-      <Section id="experience" title="Execution Log">
+      <Section id="experience" title="EXPERIENCE">
         <div className="max-w-2xl mx-auto space-y-20 text-center md:text-left">
           
           <div className="">
