@@ -1,4 +1,4 @@
-import { Project, ProjectCategory, ProjectStatus, Skill } from './types';
+import { Project, ProjectCategory, ProjectStatus, Skill, Review } from './types';
 import { 
   Terminal, 
   Server, 
@@ -17,6 +17,33 @@ export const SOCIAL_LINKS = {
   discord: "https://discord.gg/jd6JgG6awG",
   email: "mailto:ayrixmc@gmail.com"
 };
+
+export const REVIEWS: Review[] = [
+  {
+    username: "account._.changed08",
+    rating: 5,
+    content: "AyrixMC is one of the best developers I've worked with. He is a fantastic developer and manager who handles server development perfectly. I can't recommend him enough. Thanks for working with me!",
+    date: "1/27/2026"
+  },
+  {
+    username: "bmoneyboy",
+    rating: 5,
+    content: "Ayrix is an excellent developer. He completes tasks quickly with exceptional care and quality. He's very professional and ensures you're always kept in the loop. I would definitely recommend Ayrix!!",
+    date: "1/27/2026"
+  },
+  {
+    username: "kasinathan2008",
+    rating: 5,
+    content: "Simply cool! A lot of hard work is put in by @ayrixmc. I wish him massive growth and success in all of his future endeavors.",
+    date: "1/27/2026"
+  },
+  {
+    username: "hashir_734_1",
+    rating: 5,
+    content: "AyrixMC is a wonderful web and Minecraft developer. He recently developed my Minecraft server and website with a stunning theme. It looks amazing and I recommend his services to everyone.",
+    date: "1/27/2026"
+  }
+];
 
 export const PROJECTS: Project[] = [
   {

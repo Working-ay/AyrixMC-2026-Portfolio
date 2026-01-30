@@ -27,6 +27,13 @@ export interface Skill {
   icon?: LucideIcon;
 }
 
+export interface Review {
+  username: string;
+  rating: number;
+  content: string;
+  date?: string;
+}
+
 export interface NavItem {
   label: string;
   href: string;

@@ -2,26 +2,24 @@ import React from 'react';
 import { Navbar } from './components/Navbar';
 import { Section } from './components/Section';
 import { ProjectCard } from './components/ProjectCard';
-import { SkillBadge } from './components/SkillBadge';
-import { PROJECTS, SKILLS, SOCIAL_LINKS } from './constants';
+import { ReviewCard } from './components/ReviewCard';
+import { PROJECTS, SKILLS, REVIEWS, SOCIAL_LINKS } from './constants';
 import { Github, Mail, Disc } from 'lucide-react';
 
 const App: React.FC = () => {
-  // We want to mix current and past projects but visually distinguish them in the grid
   const allProjects = [...PROJECTS];
 
   return (
-    <div className="min-h-screen bg-black text-white selection:bg-white selection:text-black">
+    <div className="min-h-screen bg-black text-white selection:bg-white selection:text-black font-sans">
       <Navbar />
 
       {/* Hero Section */}
       <section id="home" className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden">
-        {/* Subtle background element */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-white/[0.02] rounded-full blur-3xl pointer-events-none"></div>
 
         <div className="max-w-4xl w-full text-center relative z-10">
           <p className="font-mono text-xs text-gray-600 mb-8 tracking-[0.3em] uppercase">
-            Commissions Open
+            System Interface v2.0
           </p>
           
           <h1 className="text-6xl md:text-9xl font-bold tracking-tighter mb-10 text-white">
@@ -36,7 +34,6 @@ const App: React.FC = () => {
                 <span>•</span>
                 <span>Hosting</span>
              </div>
-             {/* Removed vertical line */}
             <p className="max-w-md leading-relaxed text-gray-600">
               Architecting high-performance infrastructure and automated backend systems for gaming networks.
             </p>
@@ -44,7 +41,7 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* Projects Section - Text Masonry */}
+      {/* Projects Section */}
       <Section id="projects" title="PROJECTS">
         <div className="columns-1 md:columns-2 lg:columns-3 gap-16 space-y-16">
           {allProjects.map((project, index) => (
@@ -53,7 +50,7 @@ const App: React.FC = () => {
         </div>
       </Section>
 
-      {/* Skills Section - Text Clouds */}
+      {/* Skills Section */}
       <Section id="skills" title="SKILLS">
         <div className="flex flex-wrap justify-center gap-x-10 gap-y-6 max-w-3xl mx-auto">
           {SKILLS.map((skill) => (
@@ -67,10 +64,9 @@ const App: React.FC = () => {
         </div>
       </Section>
 
-      {/* Experience Section - Minimal Text */}
+      {/* Experience Section */}
       <Section id="experience" title="EXPERIENCE">
         <div className="max-w-2xl mx-auto space-y-20 text-center md:text-left">
-          
           <div className="">
             <div className="flex flex-col items-center md:items-start gap-1 mb-3">
               <h3 className="text-xl font-bold text-white">Director & COO</h3>
@@ -93,7 +89,7 @@ const App: React.FC = () => {
 
           <div className="">
             <div className="flex flex-col items-center md:items-start gap-1 mb-3">
-              <h3 className="text-xl font-bold text-gray-300">Developer</h3>
+              <h3 className="text-xl font-bold text-gray-300">Founder</h3>
               <span className="font-mono text-xs text-gray-600">@ JollySMP & Boiga SMP</span>
             </div>
             <p className="text-gray-500 text-sm leading-relaxed max-w-lg mx-auto md:mx-0">
@@ -103,11 +99,20 @@ const App: React.FC = () => {
         </div>
       </Section>
 
+      {/* Reviews Section */}
+      <Section id="reviews" title="REVIEWS">
+        <div className="flex flex-col max-w-4xl mx-auto">
+          {REVIEWS.map((review, index) => (
+            <ReviewCard key={`${review.username}-${index}`} review={review} />
+          ))}
+        </div>
+      </Section>
+
       {/* Footer */}
-      <footer className="py-24 px-6 text-center">
+      <footer className="py-24 px-6 text-center border-t border-white/5 mt-24">
         <div className="flex justify-center gap-12 mb-12">
-          <a href={SOCIAL_LINKS.github} className="text-gray-600 hover:text-white transition-colors"><Github size={20} /></a>
-          <a href={SOCIAL_LINKS.discord} className="text-gray-600 hover:text-white transition-colors"><Disc size={20} /></a>
+          <a href={SOCIAL_LINKS.github} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-white transition-colors"><Github size={20} /></a>
+          <a href={SOCIAL_LINKS.discord} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-white transition-colors"><Disc size={20} /></a>
           <a href={SOCIAL_LINKS.email} className="text-gray-600 hover:text-white transition-colors"><Mail size={20} /></a>
         </div>
         <p className="text-gray-800 font-mono text-[10px] uppercase tracking-widest">
